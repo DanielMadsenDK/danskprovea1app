@@ -1,0 +1,400 @@
+[
+  {
+    "id": 1,
+    "title": "Dansk test 01",
+    "description": "Dette er en danskprøve",
+    "shuffleQuestions": true,
+    "imagePath": "",
+    "categoryId": 1,
+    "questions": [
+      {
+        "text": "Spørgsmål 01",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 02",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 03",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 04",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 05",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Dansk test 02",
+    "description": "Dette er en danskprøve",
+    "shuffleQuestions": true,
+    "imagePath": "",
+    "categoryId": 1,
+    "questions": [
+      {
+        "text": "Spørgsmål 01",
+        "duration": 10,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 02",
+        "duration": 15,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 03",
+        "duration": 20,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 04",
+        "duration": 25,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 05",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Spørgsmål 06",
+        "duration": 35,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Music Quiz 01",
+    "description": "Dette er en danskprøve",
+    "shuffleQuestions": true,
+    "imagePath": "",
+    "categoryId": 2,
+    "questions": [
+      {
+        "text": "Music question 01",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Music question 02",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Music question 03",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Music question 04",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Music question 05",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+]
