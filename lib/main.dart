@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quiz_app/common/route_generator.dart';
+import 'package:flutter/services.dart';
 
 import 'common/theme_helper.dart';
 import 'stores/quiz_store.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   await QuizStore.initPrefs();
   runApp(QuizApp());
 }
