@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:just_audio/just_audio.dart';
 import 'package:flutter_quiz_app/models/question.dart';
 import 'package:flutter_quiz_app/models/quiz.dart';
 
@@ -8,14 +9,21 @@ typedef OnQuizNext = void Function(Question question);
 typedef OnQuizCompleted = void Function(
     Quiz quiz, double totalCorrect, Duration takenTime);
 typedef OnQuizStop = void Function(Quiz quiz);
+typedef OnQuizTimerStart = void Function();
+typedef OnQuizPause = void Function();
+typedef OnQuizResume = void Function();
+typedef OnQuizDispose = void Function();
 
 class QuizEngine {
   int questionIndex = 0;
   int questionDuration = 0;
   bool isRunning = false;
   bool takeNewQuestion = true;
+  bool audioQuestionPlaying = false;
+  bool isAudioQuestion = false;
   DateTime examStartTime = DateTime.now();
   DateTime questionStartTime = DateTime.now();
+  AudioPlayer audioPlayer = AudioPlayer();
 
   Quiz quiz;
   List<int> takenQuestions = [];
@@ -24,10 +32,12 @@ class QuizEngine {
   OnQuizNext onNext;
   OnQuizCompleted onCompleted;
   OnQuizStop onStop;
+  OnQuizTimerStart onQuizTimerStart;
 
-  QuizEngine(this.quiz, this.onNext, this.onCompleted, this.onStop);
+  QuizEngine(this.quiz, this.onNext, this.onCompleted, this.onStop,
+      this.onQuizTimerStart);
 
-  void start() {
+  void start() async {
     questionIndex = 0;
     questionDuration = 0;
     takenQuestions = [];
@@ -44,18 +54,37 @@ class QuizEngine {
         if (takeNewQuestion) {
           question = _nextQuestion(quiz, questionIndex);
           if (question != null) {
+            isAudioQuestion = question.audio.isNotEmpty;
+            audioQuestionPlaying = false;
             takeNewQuestion = false;
             questionIndex++;
-            questionStartTime = DateTime.now();
-            onNext(question);
+
+            if (!isAudioQuestion) {
+              onNext(question);
+              questionStartTime = DateTime.now();
+              onQuizTimerStart;
+            } else {
+              onNext(question);
+
+              await audioPlayer.setAsset(question.audio);
+              await audioPlayer.play();
+              questionStartTime = DateTime.now();
+              if (!takeNewQuestion) {
+                onQuizTimerStart();
+              }
+            }
           }
         }
-        if (question != null) {
+        if (question != null ||
+            (isAudioQuestion &&
+                !audioPlayer.playerState.playing &&
+                question != null)) {
           var questionTimeEnd =
-              questionStartTime.add(Duration(seconds: question.duration));
+              questionStartTime.add(Duration(seconds: question!.duration));
           var timeDiff = questionTimeEnd.difference(DateTime.now()).inSeconds;
           if (timeDiff <= 0) {
             takeNewQuestion = true;
+            disposeAudioplayer(true);
           }
         }
 
@@ -70,20 +99,38 @@ class QuizEngine {
           var takenTime = examStartTime.difference(DateTime.now());
           onCompleted(quiz, totalCorrect, takenTime);
         }
-        await Future.delayed(Duration(milliseconds: 500));
+
+        await Future.delayed(Duration(milliseconds: 900));
       } while (question != null && isRunning);
       return false;
     });
+  }
+
+  void disposeAudioplayer(bool recreate) {
+    if (isAudioQuestion) {
+      audioPlayer.stop();
+      audioPlayer.dispose();
+      if (recreate) {
+        audioPlayer = AudioPlayer();
+      }
+    }
   }
 
   void stop() {
     takeNewQuestion = false;
     isRunning = false;
     onStop(quiz);
+    disposeAudioplayer(false);
   }
 
   void next() {
     takeNewQuestion = true;
+    disposeAudioplayer(true);
+  }
+
+  void updateAudioQuestionPlaying(bool state) {
+    if (!state) questionStartTime = DateTime.now();
+    audioQuestionPlaying = state;
   }
 
   void updateAnswer(int questionIndex, int answer) {
@@ -103,8 +150,28 @@ class QuizEngine {
           return quiz.questions[index];
         }
       } else {
+        if (index >= quiz.questions.length) {
+          return null;
+        }
         return quiz.questions[index];
       }
     }
+  }
+
+  void onPause() async {
+    if (isAudioQuestion) {
+      await audioPlayer.pause();
+    }
+  }
+
+  void onResume() async {
+    if (isAudioQuestion) {
+      await audioPlayer.play();
+    }
+  }
+
+  void onDispose() {
+    audioPlayer.stop();
+    audioPlayer.dispose();
   }
 }

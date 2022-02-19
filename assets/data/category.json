@@ -1,42 +1,22 @@
 [
   {
     "id": 1,
-    "name": "Science",
+    "name": "Delprøve 1",
     "imagePath": "assets/icons/category/science.png"
   },
   {
     "id": 2,
-    "name": "Music",
+    "name": "Delprøve 2",
     "imagePath": "assets/icons/category/music.png"
   },
   {
     "id": 3,
-    "name": "Sports",
+    "name": "Delprøve 3",
     "imagePath": "assets/icons/category/sports.png"
   },
   {
     "id": 4,
-    "name": "Nature",
+    "name": "Delprøve 4",
     "imagePath": "assets/icons/category/nature.png"
-  },
-  {
-    "id": 5,
-    "name": "English",
-    "imagePath": "assets/icons/category/language.png"
-  },
-  {
-    "id": 6,
-    "name": "Mathematics",
-    "imagePath": "assets/icons/category/math.png"
-  },
-  {
-    "id": 7,
-    "name": "Science",
-    "imagePath": "assets/icons/category/science.png"
-  },
-  {
-    "id": 8,
-    "name": "Music",
-    "imagePath": "assets/icons/category/music.png"
   }
 ]

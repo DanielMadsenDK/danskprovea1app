@@ -34,11 +34,13 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
   AppLifecycleState? state;
 
   int _remainingTime = 0;
+  bool audioQuestion = false;
   Map<int, OptionSelection> _optionSerial = {};
 
   _QuizScreenState(this.quiz) {
     store = QuizStore();
-    engine = QuizEngine(quiz, onNextQuestion, onQuizComplete, onStop);
+    engine = QuizEngine(
+        quiz, onNextQuestion, onQuizComplete, onStop, setAndStartTimer);
   }
 
   @override
@@ -50,6 +52,12 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused) {
+      engine.onPause();
+    }
+    if (state == AppLifecycleState.resumed) {
+      engine.onResume();
+    }
     super.didChangeAppLifecycleState(state);
     this.state = state;
   }
@@ -60,6 +68,7 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
       progressTimer!.cancel();
     }
     engine.stop();
+    engine.onDispose();
     WidgetsBinding.instance!.removeObserver(this);
     super.dispose();
   }
@@ -75,6 +84,7 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                screenSectionHeader(),
                 screenHeader(),
                 quizQuestion(),
                 questionOptions(),
@@ -95,6 +105,17 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
         quiz.title,
         style: Theme.of(context).textTheme.headline3,
       ),
+    );
+  }
+
+  Widget screenSectionHeader() {
+    Text header = Text(
+      quiz.categoryId.toString(),
+      style: Theme.of(context).textTheme.headline2,
+    );
+    return Container(
+      alignment: Alignment.center,
+      child: header,
     );
   }
 
@@ -190,6 +211,11 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
         ),
         DiscoButton(
           onPressed: () {
+            setState(() {
+              if (progressTimer != null) {
+                progressTimer!.cancel();
+              }
+            });
             engine.next();
           },
           child: Text(
@@ -210,15 +236,17 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
         _remainingTime = 0;
         progressTimer!.cancel();
       }
-
       this.question = question;
       _remainingTime = question.duration;
       _optionSerial = {};
+
       for (var i = 0; i < question.options.length; i++) {
         _optionSerial[i] = OptionSelection(String.fromCharCode(65 + i), false);
       }
     });
+  }
 
+  void setAndStartTimer() {
     Timer.periodic(Duration(seconds: 1), (timer) {
       if (_remainingTime >= 0) {
         try {
@@ -242,7 +270,9 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
         _remainingTime = 0;
       });
     }
-    progressTimer!.cancel();
+    if (progressTimer != null) {
+      progressTimer!.cancel();
+    }
     store.getCategoryAsync(quiz.categoryId).then((category) {
       store
           .saveQuizHistory(QuizHistory(
@@ -262,6 +292,8 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
 
   void onStop(Quiz quiz) {
     _remainingTime = 0;
-    progressTimer!.cancel();
+    if (progressTimer != null) {
+      progressTimer!.cancel();
+    }
   }
 }

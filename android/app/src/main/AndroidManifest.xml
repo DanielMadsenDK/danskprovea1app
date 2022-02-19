@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.fluttertutorial.quiz.app.flutter_quiz_app">
    <application
-        android:label="flutter_quiz_app"
+        android:label="Danskprøve A1"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

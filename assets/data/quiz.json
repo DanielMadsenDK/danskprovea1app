@@ -1,15 +1,17 @@
 [
   {
     "id": 1,
-    "title": "Dansk test 01",
+    "title": "Præsentation",
     "description": "Dette er en danskprøve",
-    "shuffleQuestions": true,
+    "shuffleQuestions": false,
     "imagePath": "",
     "categoryId": 1,
     "questions": [
       {
+        "image":"assets/icons/back.png",
+        "audio": "assets/audio/hvad_hedder_du.m4a",
         "text": "Spørgsmål 01",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -31,8 +33,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/hvor_kommer_du_fra.m4a",
         "text": "Spørgsmål 02",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -54,8 +58,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/hvad_hedder_du.m4a",
         "text": "Spørgsmål 03",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -77,8 +83,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/hvad_hedder_du.m4a",
         "text": "Spørgsmål 04",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -100,8 +108,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/hvad_hedder_du.m4a",
         "text": "Spørgsmål 05",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -126,15 +136,17 @@
   },
   {
     "id": 2,
-    "title": "Dansk test 02",
+    "title": "Syv korte tekster",
     "description": "Dette er en danskprøve",
     "shuffleQuestions": true,
     "imagePath": "",
     "categoryId": 1,
     "questions": [
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Spørgsmål 01",
-        "duration": 10,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -156,8 +168,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Spørgsmål 02",
-        "duration": 15,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -179,8 +193,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Spørgsmål 03",
-        "duration": 20,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -202,8 +218,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Spørgsmål 04",
-        "duration": 25,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -225,8 +243,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Spørgsmål 05",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -248,8 +268,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Spørgsmål 06",
-        "duration": 35,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -274,15 +296,17 @@
   },
   {
     "id": 3,
-    "title": "Music Quiz 01",
+    "title": "Syv situationer",
     "description": "Dette er en danskprøve",
     "shuffleQuestions": true,
     "imagePath": "",
     "categoryId": 2,
     "questions": [
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Music question 01",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -304,8 +328,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Music question 02",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -327,8 +353,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Music question 03",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -350,8 +378,10 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Music question 04",
-        "duration": 30,
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {
@@ -373,8 +403,145 @@
         ]
       },
       {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
         "text": "Music question 05",
-        "duration": 30,
+        "duration": 5,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Hvad handler historien om?",
+    "description": "Dette er en danskprøve",
+    "shuffleQuestions": true,
+    "imagePath": "",
+    "categoryId": 2,
+    "questions": [
+      {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
+        "text": "Music question 01",
+        "duration": 5,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
+        "text": "Music question 02",
+        "duration": 5,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
+        "text": "Music question 03",
+        "duration": 5,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
+        "text": "Music question 04",
+        "duration": 5,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "A",
+            "isCorrect": true
+          },
+          {
+            "text": "B",
+            "isCorrect": false
+          },
+          {
+            "text": "C",
+            "isCorrect": false
+          },
+          {
+            "text": "D",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "image":"assets/icons/back.png",
+        "audio":"assets/audio/coins.mp3",
+        "text": "Music question 05",
+        "duration": 5,
         "shuffleOptions": true,
         "options": [
           {

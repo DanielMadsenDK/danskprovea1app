@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //drawerToggleButton(),
               Column(
                 children: [
-                  headerText("A1 Test"),
+                  headerText("Danskprøve A1"),
                   SizedBox(height: 30),
                   ...homeScreenButtons(context),
                 ],
@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  "A1 Test",
+                  "Danskprøve A1",
                   style: TextStyle(color: Colors.white, fontSize: 32),
                 ),
                 Text(
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Text(
       text,
       style: TextStyle(
-          fontSize: 72,
+          fontSize: 52,
           color: ThemeHelper.accentColor,
           fontWeight: FontWeight.bold,
           shadows: [
